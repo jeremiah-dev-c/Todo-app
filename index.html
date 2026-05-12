@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="sidebar">
+            <span class="sidebar-label">Overview</span>
+            <div class="cat active" id="filter-all">
+                All
+                <span class="count" id="count-all"></span>
+            </div>
+            <div class="cat" id="filter-today">
+                Today
+                <span class="count" id="count-today"></span>
+            </div>
+            <div class="cat" id="filter-done">
+                Done
+                <span class="done" id="count-done"></span>
+            </div>
+            <span class="sidebar-label">Labels</span>
+            <div class="cat" id="filter-design">
+                Design
+                <span class="count" id="count-design"></span>
+            </div>
+            <div class="cat" id="filter-dev">
+                Dev
+                <span class="count" id="count-dev"></span>
+            </div>
+            <div class="cat" id="filter-review">
+                Review 
+                <span class="count" id="count-review"></span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="header">
+                <h2 id="view-title">All Tasks</h2>
+                <button class="add-btn" id="add-task-btn">Add task</button>
+            </div>
+
+            <div class="task-list" id="task-list">
+
+                <div class="section" id="section-today">
+                    <div class="section-title">Today</div>
+                    <div class="tasks" id="tasks-today"></div>
+                </div>
+
+                <div class="section" id="section-later">
+                    <div class="section-title">Later</div>
+                    <div class="tasks" id="tasks-later"></div>
+                </div>
+
+                <div class="section" id="section-done">
+                    <div class="section-title">Done</div>
+                    <div class="tasks" id="tasks-done"></div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
