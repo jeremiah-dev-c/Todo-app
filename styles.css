@@ -13,3 +13,14 @@ body {
     padding: 24px;
     height: 100vh;
 }
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: #262624;
+    gap: 50px;
+}
+
+.main {
+    background-color: #30302E;
+}
