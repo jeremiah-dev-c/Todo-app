@@ -7,3 +7,9 @@
 body {
     background-color: #FAF9F6;
 }
+
+.wrap {
+    display: flex;
+    padding: 24px;
+    height: 100vh;
+}
