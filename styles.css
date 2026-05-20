@@ -35,3 +35,7 @@ body {
 .header button {
     margin-left: auto;
 }
+
+.main {
+    padding: 48px;
+}
