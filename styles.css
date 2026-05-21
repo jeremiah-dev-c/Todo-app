@@ -7,26 +7,32 @@
 }
 
 body {
-    background-color: #FAF9F6;
+    background: linear-gradient(90deg, rgba(255, 94, 94, 1) 0%, rgba(94, 87, 199, 1) 100%);
     font-family: 'Open Sans', sans-serif;
     color: #fff;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrap {
     display: flex;  
-    height: 100vh;
+    max-width: 900px;
 }
 
 .sidebar{
     display: flex;
     flex-direction: column;
     background-color: #262624;
-    gap: 50px;
+    gap: 8px;
 }
 
 .main {
     background-color: #30302E;
+    padding: 24px;
     flex-grow: 1;
+
 }
 .header {
     display: flex;
@@ -34,10 +40,6 @@ body {
 
 .header button {
     margin-left: auto;
-}
-
-.main {
-    padding: 48px;
 }
 
 .add-btn {
