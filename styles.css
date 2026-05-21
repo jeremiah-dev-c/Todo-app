@@ -18,7 +18,10 @@ body {
 
 .wrap {
     display: flex;  
+    min-height: 550px;
     max-width: 900px;
+    overflow: hidden;
+    border-radius: 15px ;
 }
 
 .sidebar{
@@ -26,8 +29,7 @@ body {
     flex-direction: column;
     background-color: #262624;
     gap: 8px;
-    min-width: 220px;
-    min-height: 550px;
+    min-width: 120px;
 }
 
 .main {
