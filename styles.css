@@ -26,6 +26,8 @@ body {
     flex-direction: column;
     background-color: #262624;
     gap: 8px;
+    min-width: 220px;
+    min-height: 550px;
 }
 
 .main {
