@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..600&display=swap');
 
 *{
     margin: 0;
@@ -18,7 +18,7 @@ body {
 
 .wrap {
     display: flex;  
-    min-height: 550px;
+    min-height: 500px;
     max-width: 800px;
     overflow: hidden;
     border-radius: 15px ;
@@ -66,9 +66,39 @@ body {
     color: #C1BFB5;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+}
+
+.cat:active {
+    background-color: #30302E;
+    border-radius: 8px;
 }
 
 .material-symbols-outlined {
     font-size: 20px;
+}
+
+
+
+.dot-design {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #8077DE;
+
+}
+
+.dot-dev {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #378ADD;
+}
+
+.dot-review {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #F09F28;
+
 }
