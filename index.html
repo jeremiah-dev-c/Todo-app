@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo app</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..350,0..1,-50..200"/>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,14 +12,17 @@
         <div class="sidebar">
             <span class="sidebar-label">Overview</span>
             <div class="cat active" id="filter-all">
+                <span class="material-symbols-outlined">grid_view</span>
                 All
                 <span class="count" id="count-all"></span>
             </div>
             <div class="cat" id="filter-today">
+                <span class="material-symbols-outlined">schedule</span>
                 Today
                 <span class="count" id="count-today"></span>
             </div>
             <div class="cat" id="filter-done">
+                <span class="material-symbols-outlined">check</span>
                 Done
                 <span class="count" id="count-done"></span>
             </div>
