@@ -18,7 +18,7 @@ body {
 
 .wrap {
     display: flex;  
-    min-height: 500px;
+    min-height: 550px;
     max-width: 800px;
     overflow: hidden;
     border-radius: 15px ;
@@ -31,7 +31,7 @@ body {
     background-color: #262624;
     gap: 8px;
     min-width: 200px;
-    padding: 10px 24px;
+    padding: 15px;
 }
 
 .main {
@@ -59,7 +59,11 @@ body {
 
 .sidebar-label {
     color: #9C9A92;
-    padding-top:8px ;
+    padding-top: 5px ;
+    font-size: 12px ;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 6px;
 }
 
 .cat {
@@ -67,11 +71,15 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    height: 30px;
+    padding-left: 6px;
+    font-size: 14px;
 }
 
 .cat:active {
     background-color: #30302E;
     border-radius: 8px;
+    color: #fff;
 }
 
 .material-symbols-outlined {
