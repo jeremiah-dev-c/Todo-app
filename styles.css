@@ -110,3 +110,24 @@ body {
     background-color: #F09F28;
 
 }
+
+.header h2 {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+
+.section {
+    margin-bottom: 64px;
+}
+
+.section-title {
+    color: #9C9A92;
+    font-size: 12px ;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
