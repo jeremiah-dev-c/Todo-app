@@ -1,19 +1,19 @@
 const tasks = [
     {
         "text" : "Meeting with product owner",
-        "label" : "dev",
+        "label" : "Dev",
         "status" : "today",
         "priority" : "medium"
     },
     {
         "text" : "Finalize mock-up",
-        "label" : "design",
+        "label" : "Design",
         "status" : "later",
         "priority" : "low"
     },
     {
         "text" : "Write README",
-        "label" : "review",
+        "label" : "Review",
         "status" : "done",
         "priority": "high"
     }

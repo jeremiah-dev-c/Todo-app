@@ -153,6 +153,7 @@ body {
     width: 8px;
     border-radius: 50%;
     margin-right: 10px ;
+    margin-left: auto;
 }
 
 .priority.low {
@@ -165,4 +166,14 @@ body {
 
 .priority.high {
     background-color: #E24B4A;
+}
+
+.tag {
+    display: flex;
+    height: 25px;
+    padding: 4px 10px;
+    background-color: #b8d2ec;
+    border-radius: 30px;
+    align-items: center;
+    color: black;
 }
