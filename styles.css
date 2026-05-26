@@ -145,5 +145,24 @@ body {
     border: 1.8px solid #656460;
     border-radius: 50%;
     margin-right: 10px;
+}
 
+.priority {
+    font-size: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 10px ;
+}
+
+.priority.low {
+    background-color: #97C459;
+}
+
+.priority.medium {
+    background-color: #F09F28;
+}
+
+.priority.high {
+    background-color: #E24B4A;
 }

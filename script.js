@@ -1,32 +1,32 @@
 const tasks = [
     {
         "text" : "Meeting with product owner",
-        "label" : "Dev",
-        "status" : "Today",
-        "priority" : "Medium"
+        "label" : "dev",
+        "status" : "today",
+        "priority" : "medium"
     },
     {
         "text" : "Finalize mock-up",
-        "label" : "Design",
-        "status" : "Later",
-        "priority" : "Low"
+        "label" : "design",
+        "status" : "later",
+        "priority" : "low"
     },
     {
         "text" : "Write README",
-        "label" : "Review",
-        "status" : "Done",
-        "priority": "High"
+        "label" : "review",
+        "status" : "done",
+        "priority": "high"
     }
 ]
 
 tasks.forEach((task) => {
     let targetId = ""
     
-    if (task.status == "Today") {
+    if (task.status == "today") {
         targetId = "tasks-today"
-    } else if (task.status == "Later") {
+    } else if (task.status == "later") {
         targetId = "tasks-later"
-    } else if (task.status == "Done") {
+    } else if (task.status == "done") {
         targetId = "tasks-done"
     }
     
