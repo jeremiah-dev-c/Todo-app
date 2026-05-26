@@ -31,6 +31,7 @@ tasks.forEach((task) => {
     }
     
     document.getElementById(targetId).innerHTML += `<div class="task">
+        <div class="checkbox"></div>
         <span class="task-text">${task.text}</span>
         <span class="priority ${task.priority}">${task.priority}</span>
         <span class="tag ${task.label}">${task.label}</span>
