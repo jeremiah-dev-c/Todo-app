@@ -44,3 +44,7 @@ taskClick.addEventListener('click', () => {
     taskPopup.style.display = ('block')
 })
 
+const cancelPopup = document.getElementById('cancel-popup');
+cancelPopup.addEventListener('click', () => {
+    taskPopup.style.display = ('none')
+})
