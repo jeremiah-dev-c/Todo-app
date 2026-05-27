@@ -58,6 +58,14 @@ body {
     font-size: 16px;
 }
 
+.add-btn:hover {
+    background-color: #4b4b49;
+}
+
+.add-btn:active {
+    transform: scale(0.98);
+}
+
 .sidebar-label {
     color: #9C9A92;
     padding-top: 5px ;
@@ -176,4 +184,16 @@ body {
     border-radius: 30px;
     align-items: center;
     color: black;
+}
+
+.newtask-popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #378ADD;
+    width: 350px;
+    height: 400px;
+    border-radius: 15px;
+    display: none;
 }
