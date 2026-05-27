@@ -38,3 +38,9 @@ tasks.forEach((task) => {
         </div>`
 })
 
+const taskClick = document.getElementById('add-btn');
+const taskPopup = document.getElementById('newtask-popup');
+taskClick.addEventListener('click', () => {
+    taskPopup.style.display = ('block')
+})
+
