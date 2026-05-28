@@ -44,7 +44,7 @@ taskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
 })
 
-const cancelPopup = document.getElementById('cancel-popup');
+const cancelPopup = document.getElementById('cancel-btn');
 cancelPopup.addEventListener('click', () => {
     taskPopup.classList.add('hidden')
 })

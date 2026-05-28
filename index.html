@@ -71,29 +71,29 @@
 
     </div>
     <div class="newtask-popup hidden" id="newtask-popup">
-        <h3>New task </h3>
-        <label>Task name</label>
-        <input class="task-name" id="task-name" placeholder="e.g. Review pull request">
-        <label>When</label>
-        <select class="task-date" id="task-date">
+        <h4>New task </h4>
+        <label class="popup-title task-name">Task name</label>
+        <input class="popup-input" id="task-name" placeholder="e.g. Review pull request">
+        <label class="popup-title">When</label>
+        <select class="popup-select" id="task-date">
             <option>Today</option>
             <option>Later</option>
         </select>
-        <label>Priority</label>
-        <select class="task-priority" id="task-priority">
+        <label class="popup-title">Priority</label>
+        <select class="popup-select" id="task-priority">
             <option>High</option>
             <option>Medium</option>
             <option>Low</option>
         </select>
-        <label>Label</label>
-        <select class="task-label" id="task-label">
+        <label class="popup-title">Label</label>
+        <select class="popup-select" id="task-label">
             <option>Dev</option>
             <option>Design</option>
             <option>Review</option>
         </select>
-        <div class="popup-buttons">
-            <button class="cancel-popup" id="cancel-popup">Cancel</button>
-            <button class="done-popup" id="done-popup">Done</button>
+        <div class="popup-button">
+            <button class="popup-btn cancel-btn" id="cancel-btn">Cancel</button>
+            <button class="popup-btn done-btn" id="done-btn">Add task</button>
         </div>
     </div>
     <script src="script.js"></script>

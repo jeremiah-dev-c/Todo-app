@@ -197,12 +197,64 @@ body {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    padding: 24px;
 }
 
 .hidden {
     display: none;
 }
 
-.popup-buttons {
+.popup-button {
     display: flex;
+}
+
+.popup-select {
+    color: #fff;
+    background-color: #40403d;
+    border-radius: 7px;
+    height: 36px;
+    font-size: 16px;
+    border: 1px solid #535352;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.popup-title {
+    color: #9C9A92;
+    font-size: 14px;
+}
+
+.popup-input {
+    color: white;
+    background-color: #40403d;
+    border-radius: 7px;
+    height: 36px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #535352;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.task-name {
+    padding-top: 16px;
+}
+
+.cancel-btn{
+    margin-left: auto;
+}
+
+.done-btn {
+    margin-left: 10px;
+}
+
+.popup-btn {
+    color: #fff;
+    background-color: #2d2d2c;
+    height: 35px;
+    width: 80px;
+    border-radius: 6px;
+    border: 1px solid #4b4b49;
+    font-size: 15px;
+    margin-top: 10px;
 }
