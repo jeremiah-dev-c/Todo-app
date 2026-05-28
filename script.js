@@ -41,10 +41,10 @@ tasks.forEach((task) => {
 const taskClick = document.getElementById('add-btn');
 const taskPopup = document.getElementById('newtask-popup');
 taskClick.addEventListener('click', () => {
-    taskPopup.style.display = ('block')
+    taskPopup.classList.remove('hidden')
 })
 
 const cancelPopup = document.getElementById('cancel-popup');
 cancelPopup.addEventListener('click', () => {
-    taskPopup.style.display = ('none')
+    taskPopup.classList.add('hidden')
 })

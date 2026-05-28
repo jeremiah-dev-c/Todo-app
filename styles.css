@@ -195,5 +195,8 @@ body {
     width: 350px;
     height: 400px;
     border-radius: 15px;
+}
+
+.hidden {
     display: none;
 }
