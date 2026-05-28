@@ -71,7 +71,28 @@
 
     </div>
     <div class="newtask-popup" id="newtask-popup">
+        <h3>New task </h3>
+        <label>Task name</label>
+        <input id="task-name" placeholder="e.g. Review pull request">
+        <label>When</label>
+        <select id="task-date">
+            <option>Today</option>
+            <option>Later</option>
+        </select>
+        <label>Priority</label>
+        <select id="task-priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+        <label>Label</label>
+        <select id="task-label">
+            <option>Dev</option>
+            <option>Design</option>
+            <option>Review</option>
+        </select>
         <button class="cancel-popup" id="cancel-popup">Cancel</button>
+        <button class="done-popup" id="done-popup">Done</button>
     </div>
     <script src="script.js"></script>
 </body>
