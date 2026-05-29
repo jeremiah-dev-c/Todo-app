@@ -289,3 +289,13 @@ body {
     background: rgba(14, 14, 16, 0.8);
     z-index: 1;
 }
+
+.required {
+    border-color: red;
+}
+
+.error-message {
+    font-size: 14px;
+    padding-left: 10px;
+    color: red;
+}
