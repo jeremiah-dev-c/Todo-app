@@ -31,21 +31,27 @@ taskClick.addEventListener('click', () => {
     overlay.classList.remove('hidden')
 })
 
-const emptyTaskClick = document.getElementById('empty-add-btn')
+const emptyTaskClick = document.getElementById('empty-add-btn');
 
 emptyTaskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
     overlay.classList.remove('hidden')
 })
 
-
+const taskNameInput = document.getElementById('task-name');
 const cancelPopup = document.getElementById('cancel-btn');
+
 cancelPopup.addEventListener('click', () => {
     taskPopup.classList.add('hidden')
     overlay.classList.add('hidden')
+    taskNameInput.value = ""
+    errorMessage.classList.add('hidden')
+    taskNameInput.classList.remove('required')
 })
 
-const addTask = document.getElementById('done-btn')
+const addTask = document.getElementById('done-btn');
+
+const errorMessage = document.getElementById('error-message');
 
 addTask.addEventListener('click', () => {
     const popupInput = document.getElementById('task-name').value;
@@ -60,12 +66,6 @@ addTask.addEventListener('click', () => {
     "priority" : popupTaskPriority
     }
 
-
-
-
-    const errorMessage = document.getElementById('error-message')
-    const taskNameInput = document.getElementById('task-name')
-
     if (popupInput == "") {
         errorMessage.classList.remove('hidden')
         taskNameInput.classList.add('required')
@@ -76,6 +76,8 @@ addTask.addEventListener('click', () => {
         overlay.classList.add('hidden')
         checkEmptySections()
     }
+
+    taskNameInput.value = ""
 })
 
 const checkEmptySections = () => {
