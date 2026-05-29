@@ -164,15 +164,15 @@ body {
     margin-left: auto;
 }
 
-.priority.low {
+.priority.Low {
     background-color: #97C459;
 }
 
-.priority.medium {
+.priority.Medium {
     background-color: #F09F28;
 }
 
-.priority.high {
+.priority.High {
     background-color: #E24B4A;
 }
 

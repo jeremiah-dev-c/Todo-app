@@ -1,32 +1,13 @@
-const tasks = [
-    {
-        "text" : "Meeting with product owner",
-        "label" : "Dev",
-        "status" : "today",
-        "priority" : "medium"
-    },
-    {
-        "text" : "Finalize mock-up",
-        "label" : "Design",
-        "status" : "later",
-        "priority" : "low"
-    },
-    {
-        "text" : "Write README",
-        "label" : "Review",
-        "status" : "done",
-        "priority": "high"
-    }
-]
+const tasks = []
 
-tasks.forEach((task) => {
-    let targetId = ""
+const renderTask = (task) => {
+        let targetId = ""
     
-    if (task.status == "today") {
+    if (task.status == "Today") {
         targetId = "tasks-today"
-    } else if (task.status == "later") {
+    } else if (task.status == "Later") {
         targetId = "tasks-later"
-    } else if (task.status == "done") {
+    } else if (task.status == "Done") {
         targetId = "tasks-done"
     }
     
@@ -36,7 +17,10 @@ tasks.forEach((task) => {
         <span class="priority ${task.priority}">${task.priority}</span>
         <span class="tag ${task.label}">${task.label}</span>
         </div>`
-})
+    }
+
+tasks.forEach((task) => renderTask(task))
+
 
 const taskClick = document.getElementById('add-btn');
 const taskPopup = document.getElementById('newtask-popup');
@@ -48,3 +32,26 @@ const cancelPopup = document.getElementById('cancel-btn');
 cancelPopup.addEventListener('click', () => {
     taskPopup.classList.add('hidden')
 })
+
+const addTask = document.getElementById('done-btn')
+
+addTask.addEventListener('click', () => {
+    const popupInput = document.getElementById('task-name').value;
+    const popupTaskDate = document.getElementById('task-date').value;
+    const popupTaskPriority = document.getElementById('task-priority').value;
+    const popupTaskLabel = document.getElementById('task-label').value;
+
+    const newTask = {
+    "text" : popupInput,
+    "label" : popupTaskLabel,
+    "status" : popupTaskDate,
+    "priority" : popupTaskPriority
+    }
+
+    tasks.push(newTask)
+    renderTask(newTask)
+})
+
+
+
+
