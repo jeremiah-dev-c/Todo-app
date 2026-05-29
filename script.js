@@ -25,18 +25,23 @@ tasks.forEach((task) => renderTask(task))
 const taskClick = document.getElementById('add-btn');
 const emptyTaskClick = document.getElementById('empty-add-btn')
 const taskPopup = document.getElementById('newtask-popup');
+const overlay =document.getElementById('overlay')
+
 taskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
+    overlay.classList.remove('hidden')
 })
 
 emptyTaskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
+    overlay.classList.remove('hidden')
 })
 
 
 const cancelPopup = document.getElementById('cancel-btn');
 cancelPopup.addEventListener('click', () => {
     taskPopup.classList.add('hidden')
+    overlay.classList.add('hidden')
 })
 
 const addTask = document.getElementById('done-btn')
