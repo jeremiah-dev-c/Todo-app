@@ -39,7 +39,7 @@ body {
     background-color: #30302E;
     padding: 24px;
     flex-grow: 1;
-
+    position: relative;
 }
 .header {
     display: flex;
@@ -257,4 +257,26 @@ body {
     border: 1px solid #4b4b49;
     font-size: 15px;
     margin-top: 10px;
+}
+
+.empty-state  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.emoji {
+    font-size: 50px;
+}
+
+.empty-state h3 {
+    color: #ccc9c7;
+    padding-bottom: 14px;
+}
+
+.empty-state-text {
+    color: #707070;
+    padding-bottom: 14px;
 }

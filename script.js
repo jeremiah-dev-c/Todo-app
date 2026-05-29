@@ -23,10 +23,16 @@ tasks.forEach((task) => renderTask(task))
 
 
 const taskClick = document.getElementById('add-btn');
+const emptyTaskClick = document.getElementById('empty-add-btn')
 const taskPopup = document.getElementById('newtask-popup');
 taskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
 })
+
+emptyTaskClick.addEventListener('click', () => {
+    taskPopup.classList.remove('hidden')
+})
+
 
 const cancelPopup = document.getElementById('cancel-btn');
 cancelPopup.addEventListener('click', () => {
@@ -60,6 +66,7 @@ const checkEmptySections = () => {
     const sectionToday = document.getElementById('section-today')
     const sectionLater = document.getElementById('section-later')
     const sectionDone = document.getElementById('section-done')
+    const emptyState = document.getElementById('empty-state')
 
     if (todayLength == 0){
         sectionToday.classList.add('hidden')
@@ -74,6 +81,10 @@ const checkEmptySections = () => {
     }else {
         sectionDone.classList.remove('hidden')
     }
+
+    if (todayLength == 0 && laterLength == 0 && doneLength == 0) {
+        emptyState.classList.remove('hidden')
+    }else emptyState.classList.add('hidden')
 }
 
 checkEmptySections()
