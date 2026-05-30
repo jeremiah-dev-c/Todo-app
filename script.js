@@ -1,4 +1,5 @@
-const tasks = []
+const savedTasks = localStorage.getItem('tasks')
+const tasks = savedTasks ? JSON.parse(savedTasks) : []
 
 const renderTask = (task, index) => {
         let targetId = ""
@@ -74,6 +75,7 @@ addTask.addEventListener('click', () => {
         taskNameInput.classList.add('required')
     }else {
         tasks.push(newTask)
+        localStorage.setItem('tasks', JSON.stringify(tasks))
         taskPopup.classList.add('hidden')
         renderTask(newTask, tasks.length - 1)
         overlay.classList.add('hidden')
@@ -118,6 +120,7 @@ document.getElementById('task-list').addEventListener('click', (event) => {
         event.target.parentElement.classList.add('checked')
         const index = event.target.parentElement.dataset.index
         tasks[index].status = "Done"
+        localStorage.setItem('tasks', JSON.stringify(tasks))
         event.target.parentElement.remove()
         renderTask(tasks[index], index)
         checkEmptySections()

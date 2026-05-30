@@ -333,3 +333,11 @@ body {
 .task.checked .checkbox span {
     display: block;
 }
+
+.task.checked .priority {
+    opacity: 0.3;
+}
+
+.task.checked .tag{
+    opacity: 0.3;
+}
