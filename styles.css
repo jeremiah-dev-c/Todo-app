@@ -92,6 +92,13 @@ body {
     color: #fff;
 }
 
+.cat.active {
+    background-color: #30302E;
+    border-radius: 8px;
+    color: #fff;
+}
+
+
 .material-symbols-outlined {
     font-size: 20px;
 }
@@ -110,7 +117,7 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #378ADD;
+    background-color: blue;
 }
 
 .dot-review {
@@ -132,7 +139,7 @@ body {
 
 
 .section {
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 
 .section-title {
@@ -154,6 +161,9 @@ body {
     border: 1.8px solid #656460;
     border-radius: 50%;
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .priority {
@@ -166,25 +176,27 @@ body {
 }
 
 .priority.Low {
-    background-color: #97C459;
+    background-color: green;
 }
 
 .priority.Medium {
-    background-color: #F09F28;
+    background-color: orange;
 }
 
 .priority.High {
-    background-color: #E24B4A;
+    background-color: red;
 }
 
 .tag {
     display: flex;
     height: 25px;
     padding: 4px 10px;
-    background-color: #b8d2ec;
     border-radius: 30px;
     align-items: center;
-    color: black;
+    color: #60a5fa;
+    background: #1a2332;
+    border: 1px solid #2a3f5f;
+    font-size: 12px;
 }
 
 .newtask-popup {
@@ -298,4 +310,26 @@ body {
     font-size: 14px;
     padding-left: 10px;
     color: red;
+}
+
+.checkbox:hover {
+    border-color: #9b9898;
+}
+
+.task.checked .task-text{
+    color: #707070;
+    text-decoration: line-through;
+}
+
+.task.checked .checkbox {
+    background-color: rgb(72, 72, 72);
+}
+
+.checkbox span {
+    display: none;
+    font-size: 16px;
+}
+
+.task.checked .checkbox span {
+    display: block;
 }

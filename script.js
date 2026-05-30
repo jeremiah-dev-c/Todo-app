@@ -1,6 +1,6 @@
 const tasks = []
 
-const renderTask = (task) => {
+const renderTask = (task, index) => {
         let targetId = ""
     
     if (task.status == "Today") {
@@ -11,15 +11,18 @@ const renderTask = (task) => {
         targetId = "tasks-done"
     }
     
-    document.getElementById(targetId).innerHTML += `<div class="task">
-        <div class="checkbox"></div>
+    document.getElementById(targetId).innerHTML += `<div class="task
+        ${task.status == "Done" ? "checked" : ""}" data-index="${index}"> 
+        <div class="checkbox">
+        <span class="material-symbols-outlined">check</span></div>
         <span class="task-text">${task.text}</span>
         <span class="priority ${task.priority}">${task.priority}</span>
         <span class="tag ${task.label}">${task.label}</span>
         </div>`
     }
 
-tasks.forEach((task) => renderTask(task))
+
+tasks.forEach((task, index) => renderTask(task, index))
 
 
 const taskClick = document.getElementById('add-btn');
@@ -72,7 +75,7 @@ addTask.addEventListener('click', () => {
     }else {
         tasks.push(newTask)
         taskPopup.classList.add('hidden')
-        renderTask(newTask)
+        renderTask(newTask, tasks.length - 1)
         overlay.classList.add('hidden')
         checkEmptySections()
     }
@@ -108,6 +111,19 @@ const checkEmptySections = () => {
         emptyState.classList.remove('hidden')
     }else emptyState.classList.add('hidden')
 }
+
+
+document.getElementById('task-list').addEventListener('click', (event) => {
+    if (event.target.classList.contains('checkbox')){
+        event.target.parentElement.classList.add('checked')
+        const index = event.target.parentElement.dataset.index
+        tasks[index].status = "Done"
+        event.target.parentElement.remove()
+        renderTask(tasks[index], index)
+        checkEmptySections()
+    }
+})
+
 
 checkEmptySections()
 
