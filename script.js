@@ -1,7 +1,7 @@
 const savedTasks = localStorage.getItem('tasks')
 const tasks = savedTasks ? JSON.parse(savedTasks) : []
 
-const renderTask = (task, index) => {
+const renderTask = (task) => {
         let targetId = ""
     
     if (task.status == "Today") {
@@ -12,8 +12,7 @@ const renderTask = (task, index) => {
         targetId = "tasks-done"
     }
     
-    document.getElementById(targetId).innerHTML += `<div class="task
-        ${task.status == "Done" ? "checked" : ""}" data-index="${index}"> 
+    document.getElementById(targetId).innerHTML += `<div class="task ${task.status == "Done" ? "checked" : ""}" data-id="${task.id}"> 
         <div class="checkbox">
         <span class="material-symbols-outlined">check</span></div>
         <span class="task-text">${task.text}</span>
@@ -23,7 +22,7 @@ const renderTask = (task, index) => {
     }
 
 
-tasks.forEach((task, index) => renderTask(task, index))
+tasks.forEach((task) => renderTask(task))
 
 
 const taskClick = document.getElementById('add-btn');
@@ -64,6 +63,7 @@ addTask.addEventListener('click', () => {
     const popupTaskLabel = document.getElementById('task-label').value;
 
     const newTask = {
+    "id": Date.now(),
     "text" : popupInput,
     "label" : popupTaskLabel,
     "status" : popupTaskDate,
@@ -116,16 +116,28 @@ const checkEmptySections = () => {
 
 
 document.getElementById('task-list').addEventListener('click', (event) => {
-    if (event.target.classList.contains('checkbox')){
-        event.target.parentElement.classList.add('checked')
-        const index = event.target.parentElement.dataset.index
-        tasks[index].status = "Done"
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-        event.target.parentElement.remove()
-        renderTask(tasks[index], index)
-        checkEmptySections()
+    if (event.target.closest('.checkbox')){
+        event.target.closest('.task').classList.add('checked')
+        const id = event.target.closest('.task').dataset.id
+        const task = tasks.find(t => t.id == id)
+        if (task.status == 'Done'){
+            tasks.splice(tasks.indexOf(task), 1)
+            event.target.closest('.task').remove()
+            localStorage.setItem('tasks', JSON.stringify(tasks))
+            checkEmptySections()
+        }else {
+            task.status = "Done"
+            localStorage.setItem('tasks', JSON.stringify(tasks))
+            event.target.closest('.task').remove()
+            renderTask(task)
+            checkEmptySections()
+        }
+        console.log(task)
     }
+    console.log(event.target)
 })
+
+
 
 
 checkEmptySections()
