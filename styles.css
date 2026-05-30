@@ -108,7 +108,7 @@ body {
 .dot-design {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: 25%;
     background-color: #8077DE;
 
 }
@@ -116,14 +116,14 @@ body {
 .dot-dev {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: 25%;
     background-color: blue;
 }
 
 .dot-review {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: 25%;
     background-color: #F09F28;
 
 }
@@ -341,4 +341,25 @@ body {
 
 .task.checked .tag{
     opacity: 0.3;
+}
+
+.dot-high {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.dot-medium {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: orange;
+}
+
+.dot-low {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: green;
 }
