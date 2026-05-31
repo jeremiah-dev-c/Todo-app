@@ -160,6 +160,7 @@ cancelLabelPopup.addEventListener('click', () => {
     document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('selected'))
     document.getElementById('preview-label-dot').style.backgroundColor = ''
     document.getElementById('preview-label-text').style.color = ''
+    document.getElementById('preview-label-text').textContent = 'My label'
 })
 
 
@@ -176,6 +177,17 @@ document.getElementById('color-palette').addEventListener('click', (event) => {
         event.target.classList.add('selected')
     }
 })
+
+const loglabelinput = document.getElementById('preview-label-text');
+
+const updateValue = (e) => {
+    loglabelinput.textContent = e.target.value;
+}
+
+labelInput.addEventListener('input', updateValue)
+
+
+
 
 
 
