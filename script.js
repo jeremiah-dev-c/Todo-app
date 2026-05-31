@@ -202,8 +202,9 @@ saveLabel.addEventListener('click', () => {
     document.getElementById('label-list').innerHTML += `
     <div class="cat" id="filter-label">
         <span class="label-dot" style="background-color:${labelData.color};"></span>
-            ${labelData.name} 
+            ${labelData.name}
         <span class="count" id="count-test"></span>
+        <span class="label-close-icon material-symbols-outlined" id="delete-label-btn">close</span>
     </div>`
 
 })

@@ -85,6 +85,7 @@ body {
     padding-left: 6px;
     font-size: 14px;
     font-weight: 600;
+    padding-right: 6px;
 }
 
 .cat:active {
@@ -544,3 +545,20 @@ body {
     height: 9px;
     border-radius: 25%;
 }
+
+.label-close-icon {
+    display: none;
+    margin-left: auto;
+    color: #626261;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cat:hover .label-close-icon {
+    display: block;
+}
+
+.label-close-icon:hover {
+    color: rgb(246, 101, 101);
+}
+
