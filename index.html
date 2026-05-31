@@ -93,6 +93,7 @@
 
     </div>
     </div>
+    <!--New Task Poppup-->
     <div class="newtask-popup hidden" id="newtask-popup">
         <h4>New task </h4>
         <label class="popup-title task-name">Task name</label>
@@ -120,6 +121,40 @@
             <button class="popup-btn done-btn" id="done-btn">Add task</button>
         </div>
     </div>
+
+    <!--New Label Poppup-->
+    <div class="label-popup " id="label-popup">
+        <h4>New label </h4>
+        <label class="label-popup-title">Label name</label>
+        <input class="label-popup-input" id="label-input" placeholder="e.g. Backend">
+        <label class="error-message hidden" id="label-error-message">Label name is required!</label>
+
+        <label class="label-popup-title">Pick a color</label>
+        <div class="color-palette" id="color-palette">
+        <span class="color-1 color-dot" data-color="#61A5FA"></span>
+        <span class="color-2 color-dot" data-color="#4BDE80"></span>
+        <span class="color-3 color-dot" data-color="#F87171"></span>
+        <span class="color-4 color-dot" data-color="#FB923C"></span>
+        <span class="color-5 color-dot" data-color="#A78BFA"></span>
+        <span class="color-6 color-dot" data-color="#FACC14"></span>
+        <span class="color-7 color-dot" data-color="#34D399"></span>
+        <span class="color-8 color-dot" data-color="#F472B6"></span>
+        <span class="color-9 color-dot" data-color="#39BDF8"></span>
+        <span class="color-10 color-dot" data-color="#C084FC"></span>
+        </div>
+
+        <label class="label-popup-title">Preview</label>
+        <div class="preview-label" id="preview-label">
+            <span class="preview-label-dot" id="preview-label-dot"></span>
+            <span class="preview-label-text" id="preview-label-text">My label</span>
+        </div>
+
+        <div class="popup-button">
+            <button class="popup-btn cancel-btn" id="cancel-label-btn">Cancel</button>
+            <button class="popup-btn save-label-btn" id="save-label-btn">Save label</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -137,6 +137,16 @@ document.getElementById('task-list').addEventListener('click', (event) => {
     console.log(event.target)
 })
 
+document.getElementById('color-palette').addEventListener('click', (event) => {
+    if (event.target.classList.contains('color-dot')) {
+        const selectedColor = event.target.dataset.color
+        const previewDot = document.getElementById('preview-label-dot')
+        const previewText = document.getElementById('preview-label-text')
+        previewDot.style.backgroundColor = selectedColor
+        previewText.style.color = selectedColor
+    }
+})
+
 
 
 
