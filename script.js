@@ -1,5 +1,6 @@
 const savedTasks = localStorage.getItem('tasks')
 const tasks = savedTasks ? JSON.parse(savedTasks) : []
+let selectedColor = '#61A5FA'
 
 const renderTask = (task) => {
         let targetId = ""
@@ -166,7 +167,7 @@ cancelLabelPopup.addEventListener('click', () => {
 
 document.getElementById('color-palette').addEventListener('click', (event) => {
     if (event.target.classList.contains('color-dot')) {
-        const selectedColor = event.target.dataset.color
+        selectedColor = event.target.dataset.color
         const previewDot = document.getElementById('preview-label-dot')
         const previewText = document.getElementById('preview-label-text')
         previewDot.style.backgroundColor = selectedColor
@@ -188,6 +189,24 @@ labelInput.addEventListener('input', updateValue)
 
 
 
+const saveLabel = document.getElementById('save-label-btn')
+
+saveLabel.addEventListener('click', () => {
+    const labelName = document.getElementById('label-input').value
+
+    const labelData = {
+    "name" : labelName,
+    "color" : selectedColor
+    }
+
+    document.getElementById('label-list').innerHTML += `
+    <div class="cat" id="filter-label">
+        <span class="label-dot" style="background-color:${labelData.color};"></span>
+            ${labelData.name} 
+        <span class="count" id="count-test"></span>
+    </div>`
+
+})
 
 
 

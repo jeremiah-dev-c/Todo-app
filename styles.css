@@ -280,6 +280,10 @@ body {
     margin-top: 10px;
 }
 
+.popup-btn:active {
+    background-color: #4a4a49;
+}
+
 .empty-state  {
     position: absolute;
     left: 50%;
@@ -527,4 +531,16 @@ body {
     color: #61A5FA;
     font-size: 14px;
     font-weight: 600;
+}
+
+
+.label-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 25%;
 }
