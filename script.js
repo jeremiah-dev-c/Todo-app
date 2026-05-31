@@ -137,6 +137,32 @@ document.getElementById('task-list').addEventListener('click', (event) => {
     console.log(event.target)
 })
 
+const labelClick = document.getElementById('add-label');
+const labelPopup = document.getElementById('label-popup');
+
+labelClick.addEventListener('click', () => {
+    labelPopup.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+    document.querySelector('.color-dot').classList.add('selected')
+})
+
+const labelErrorMessage = document.getElementById('label-error-message');
+const labelInput = document.getElementById('label-input');
+const cancelLabelPopup = document.getElementById('cancel-label-btn');
+
+cancelLabelPopup.addEventListener('click', () => {
+    labelPopup.classList.add('hidden')
+    overlay.classList.add('hidden')
+    labelInput.value = ""
+    labelErrorMessage.classList.add('hidden')
+    labelInput.classList.remove('required')
+    document.querySelector('.color-dot').classList.add('selected')
+    document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('selected'))
+    document.getElementById('preview-label-dot').style.backgroundColor = ''
+    document.getElementById('preview-label-text').style.color = ''
+})
+
+
 document.getElementById('color-palette').addEventListener('click', (event) => {
     if (event.target.classList.contains('color-dot')) {
         const selectedColor = event.target.dataset.color
@@ -144,6 +170,10 @@ document.getElementById('color-palette').addEventListener('click', (event) => {
         const previewText = document.getElementById('preview-label-text')
         previewDot.style.backgroundColor = selectedColor
         previewText.style.color = selectedColor
+        document.querySelectorAll('.color-dot').forEach(dot => {
+        dot.classList.remove('selected')
+        })
+        event.target.classList.add('selected')
     }
 })
 
