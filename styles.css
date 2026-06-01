@@ -546,7 +546,7 @@ body {
     border-radius: 25%;
 }
 
-.label-close-icon {
+.delete-label-icon {
     display: none;
     margin-left: auto;
     color: #626261;
@@ -554,11 +554,11 @@ body {
     font-weight: 600;
 }
 
-.cat:hover .label-close-icon {
+.cat:hover .delete-label-icon {
     display: block;
 }
 
-.label-close-icon:hover {
+.delete-label-icon:hover {
     color: rgb(246, 101, 101);
 }
 

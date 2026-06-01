@@ -1,5 +1,9 @@
 const savedTasks = localStorage.getItem('tasks')
 const tasks = savedTasks ? JSON.parse(savedTasks) : []
+
+const savedLabels = localStorage.getItem('labels')
+const labels = savedLabels ? JSON.parse(savedLabels) : []
+
 let selectedColor = '#61A5FA'
 
 const renderTask = (task) => {
@@ -133,9 +137,7 @@ document.getElementById('task-list').addEventListener('click', (event) => {
             renderTask(task)
             checkEmptySections()
         }
-        console.log(task)
     }
-    console.log(event.target)
 })
 
 const labelClick = document.getElementById('add-label');
@@ -187,28 +189,50 @@ const updateValue = (e) => {
 
 labelInput.addEventListener('input', updateValue)
 
-
-
 const saveLabel = document.getElementById('save-label-btn')
 
 saveLabel.addEventListener('click', () => {
     const labelName = document.getElementById('label-input').value
+    labelPopup.classList.add('hidden')
+    overlay.classList.add('hidden')
 
     const labelData = {
+    "id" : Date.now(),
     "name" : labelName,
     "color" : selectedColor
     }
 
-    document.getElementById('label-list').innerHTML += `
-    <div class="cat" id="filter-label">
-        <span class="label-dot" style="background-color:${labelData.color};"></span>
-            ${labelData.name}
-        <span class="count" id="count-test"></span>
-        <span class="label-close-icon material-symbols-outlined" id="delete-label-btn">close</span>
-    </div>`
+    renderLabels(labelData)
 
+    labels.push(labelData)
+    localStorage.setItem('labels', JSON.stringify(labels))
 })
 
+    const renderLabels = (labels) => {
+
+    document.getElementById('label-list').innerHTML += `
+    <div class="cat" id="filter-label" data-id="${labels.id}">
+        <span class="label-dot" style="background-color:${labels.color};"></span>
+            ${labels.name}
+        <span class="count" id="count-test"></span>
+        <span class="delete-label-icon  material-symbols-outlined" id="delete-label-btn">close</span>
+    </div>`
+    }
+
+labels.forEach((labels) => renderLabels(labels))
+
+document.getElementById('label-list').addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-label-icon')){
+        const id = event.target.closest('.cat').dataset.id
+        const label = labels.find(t => t.id == id)
+        labels.splice(labels.indexOf(label), 1)
+        event.target.closest('.cat').remove()
+        localStorage.setItem('labels', JSON.stringify(labels))
+    }else {
+
+    }
+
+})
 
 
 
