@@ -113,29 +113,6 @@ body {
 
 
 
-.dot-design {
-    width: 8px;
-    height: 8px;
-    border-radius: 25%;
-    background-color: #8077DE;
-
-}
-
-.dot-dev {
-    width: 8px;
-    height: 8px;
-    border-radius: 25%;
-    background-color: blue;
-}
-
-.dot-review {
-    width: 8px;
-    height: 8px;
-    border-radius: 25%;
-    background-color: #F09F28;
-
-}
-
 .header h2 {
     font-size: 16px;
     padding-top: 10px;
@@ -201,9 +178,8 @@ body {
     padding: 4px 10px;
     border-radius: 30px;
     align-items: center;
-    color: #60a5fa;
-    background: #1a2332;
-    border: 1px solid #2a3f5f;
+    background-color: #262627;
+    border: 1px solid;
     font-size: 12px;
 }
 

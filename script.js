@@ -16,14 +16,18 @@ const renderTask = (task) => {
     } else if (task.status == "Done") {
         targetId = "tasks-done"
     }
+
+    const labelColor = labels.find(l => l.name == task.label)?.color || '#b8d2ec'
     
     document.getElementById(targetId).innerHTML += `<div class="task ${task.status == "Done" ? "checked" : ""}" data-id="${task.id}"> 
         <div class="checkbox">
         <span class="material-symbols-outlined">check</span></div>
         <span class="task-text">${task.text}</span>
         <span class="priority ${task.priority}">${task.priority}</span>
-        <span class="tag ${task.label}">${task.label}</span>
+        <span class="tag" style="color: ${labelColor}; border-color: ${labelColor};">${task.label}</span>
         </div>`
+
+        
     }
 
 
