@@ -181,10 +181,10 @@ document.getElementById('color-palette').addEventListener('click', (event) => {
     }
 })
 
-const loglabelinput = document.getElementById('preview-label-text');
+const logLabelInput = document.getElementById('preview-label-text');
 
 const updateValue = (e) => {
-    loglabelinput.textContent = e.target.value;
+    logLabelInput.textContent = e.target.value;
 }
 
 labelInput.addEventListener('input', updateValue)
@@ -193,8 +193,6 @@ const saveLabel = document.getElementById('save-label-btn')
 
 saveLabel.addEventListener('click', () => {
     const labelName = document.getElementById('label-input').value
-    labelPopup.classList.add('hidden')
-    overlay.classList.add('hidden')
 
     const labelData = {
     "id" : Date.now(),
@@ -202,10 +200,30 @@ saveLabel.addEventListener('click', () => {
     "color" : selectedColor
     }
 
-    renderLabels(labelData)
+    if (labelInput.value == "") {
+        labelErrorMessage.classList.remove('hidden')
+        labelInput.classList.add('required')
+    }else {
+        labels.push(labelData)
+        localStorage.setItem('labels', JSON.stringify(labels))
+        labelPopup.classList.add('hidden')
+        labelErrorMessage.classList.add('hidden')
+        renderLabels(labelData)
+        overlay.classList.add('hidden')
+        document.getElementById('preview-label-dot').style.backgroundColor = ''
+        document.getElementById('preview-label-text').style.color = ''
+        document.getElementById('preview-label-text').textContent = 'My label'
+        labelInput.classList.remove('required')
+        document.querySelector('.color-dot').classList.add('selected')
+        document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('selected'))
+        checkEmptySections()
+    }
 
-    labels.push(labelData)
-    localStorage.setItem('labels', JSON.stringify(labels))
+    if (labels.length >= 5) {
+        labelClick.classList.add('hidden')
+    }
+
+    labelInput.value = ""
 })
 
     const renderLabels = (labels) => {
@@ -228,10 +246,7 @@ document.getElementById('label-list').addEventListener('click', (event) => {
         labels.splice(labels.indexOf(label), 1)
         event.target.closest('.cat').remove()
         localStorage.setItem('labels', JSON.stringify(labels))
-    }else {
-
     }
-
 })
 
 

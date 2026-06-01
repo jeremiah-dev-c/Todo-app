@@ -318,6 +318,10 @@ body {
     border-color: red;
 }
 
+.label-popup-input.required {
+    border-color: red;
+}
+
 .error-message {
     font-size: 14px;
     padding-left: 10px;
@@ -394,7 +398,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: #262624;
     width: 350px;
-    height: 400px;
+    height: 420px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -504,7 +508,7 @@ body {
     border-radius: 7px;
     height: 36px;
     font-size: 16px;
-    padding: 0 10px;
+    padding: 10px;
     border: 1px solid #535352;
     margin-top: 4px;
     margin-bottom: 8px;
