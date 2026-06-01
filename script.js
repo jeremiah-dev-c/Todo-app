@@ -247,6 +247,9 @@ document.getElementById('label-list').addEventListener('click', (event) => {
         event.target.closest('.cat').remove()
         localStorage.setItem('labels', JSON.stringify(labels))
     }
+    if (labels.length < 5) {
+        labelClick.classList.remove('hidden')
+    }
 })
 
 
