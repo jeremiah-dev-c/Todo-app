@@ -34,10 +34,14 @@ const taskClick = document.getElementById('add-btn');
 const taskPopup = document.getElementById('newtask-popup');
 const overlay = document.getElementById('overlay')
 
-taskClick.addEventListener('click', () => {
-    taskPopup.classList.remove('hidden')
-    overlay.classList.remove('hidden')
-})
+    taskClick.addEventListener('click', () => {
+        taskPopup.classList.remove('hidden')
+        overlay.classList.remove('hidden')
+
+        document.getElementById('task-label').innerHTML = labels.map(label =>
+        `<option>${label.name}</option>`
+        ).join('')
+    })
 
 const emptyTaskClick = document.getElementById('empty-add-btn');
 
@@ -251,6 +255,7 @@ document.getElementById('label-list').addEventListener('click', (event) => {
         labelClick.classList.remove('hidden')
     }
 })
+
 
 
 
