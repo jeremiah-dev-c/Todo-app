@@ -260,8 +260,16 @@ document.getElementById('label-list').addEventListener('click', (event) => {
     }
 })
 
+const filterAll = document.getElementById('filter-all')
 const filterToday = document.getElementById('filter-today');
 const filterDone = document.getElementById('filter-done');
+
+filterAll.addEventListener('click', () => {
+    document.getElementById('tasks-today').innerHTML = ""
+    document.getElementById('tasks-later').innerHTML = ""
+    document.getElementById('tasks-done').innerHTML = ""
+   tasks.forEach((task) => renderTask(task))
+})
 
 filterToday.addEventListener('click', () => {
     document.getElementById('tasks-today').innerHTML = ""
