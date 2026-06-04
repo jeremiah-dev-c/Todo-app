@@ -52,6 +52,10 @@ const emptyTaskClick = document.getElementById('empty-add-btn');
 emptyTaskClick.addEventListener('click', () => {
     taskPopup.classList.remove('hidden')
     overlay.classList.remove('hidden')
+
+    document.getElementById('task-label').innerHTML = labels.map(label =>
+        `<option>${label.name}</option>`
+        ).join('')
 })
 
 const taskNameInput = document.getElementById('task-name');
@@ -265,23 +269,38 @@ const filterToday = document.getElementById('filter-today');
 const filterDone = document.getElementById('filter-done');
 
 filterAll.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterAll.classList.add('active')
     document.getElementById('tasks-today').innerHTML = ""
     document.getElementById('tasks-later').innerHTML = ""
     document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('section-today').classList.remove('hidden')
+    document.getElementById('section-later').classList.remove('hidden')
+    document.getElementById('section-done').classList.remove('hidden')
    tasks.forEach((task) => renderTask(task))
 })
 
 filterToday.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterToday.classList.add('active')
     document.getElementById('tasks-today').innerHTML = ""
     document.getElementById('tasks-later').innerHTML = ""
     document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('section-later').classList.add('hidden')
+    document.getElementById('section-done').classList.add('hidden')
+    document.getElementById('section-today').classList.remove('hidden')
     tasks.filter(task => task.status == "Today").forEach(task => renderTask(task))
 })
 
 filterDone.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterDone.classList.add('active')
     document.getElementById('tasks-today').innerHTML = ""
     document.getElementById('tasks-later').innerHTML = ""
     document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('section-today').classList.add('hidden')
+    document.getElementById('section-later').classList.add('hidden')
+    document.getElementById('section-done').classList.remove('hidden')
     tasks.filter(task => task.status == "Done").forEach(task => renderTask(task))
 })
 

@@ -86,6 +86,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     padding-right: 6px;
+    cursor: pointer;
 }
 
 .cat:active {
@@ -542,7 +543,5 @@ body {
     color: rgb(246, 101, 101);
 }
 
-.cat text {
- cursor: pointer;
-}
+
 
