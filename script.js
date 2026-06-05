@@ -24,10 +24,8 @@ const renderTask = (task) => {
         <span class="material-symbols-outlined">check</span></div>
         <span class="task-text">${task.text}</span>
         <span class="priority ${task.priority}">${task.priority}</span>
-        <span class="tag" style="color: ${labelColor}; border-color: ${labelColor};">${task.label}</span>
+        ${task.label ? `<span class="tag" style="color: ${labelColor}; border-color: ${labelColor};">${task.label}</span>` :''}
         </div>`
-
-        
     }
 
 
@@ -124,13 +122,22 @@ const checkEmptySections = () => {
         sectionDone.classList.remove('hidden')
     }
 
-    const emptyState = document.getElementById('empty-state')
+    const activeFilter = document.querySelector('.cat.active').id
 
-    if (todayLength == 0 && laterLength == 0 && doneLength == 0) {
-        emptyState.classList.remove('hidden')
-    }else emptyState.classList.add('hidden')
+    if (activeFilter == 'filter-all' && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    document.getElementById('empty-state-all').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-all').classList.add('hidden')
+    }if (activeFilter == 'filter-today' && todayLength == 0) {
+    document.getElementById('empty-state-today').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-today').classList.add('hidden')
+    }if (activeFilter == 'filter-done' && doneLength == 0) {
+    document.getElementById('empty-state-done').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-done').classList.add('hidden')
+    }
 }
-
 
 document.getElementById('task-list').addEventListener('click', (event) => {
     if (event.target.closest('.checkbox')){
@@ -277,7 +284,9 @@ filterAll.addEventListener('click', () => {
     document.getElementById('section-today').classList.remove('hidden')
     document.getElementById('section-later').classList.remove('hidden')
     document.getElementById('section-done').classList.remove('hidden')
-   tasks.forEach((task) => renderTask(task))
+    document.getElementById('view-title').textContent = "All tasks"
+    tasks.forEach((task) => renderTask(task))
+    checkEmptySections()
 })
 
 filterToday.addEventListener('click', () => {
@@ -289,7 +298,9 @@ filterToday.addEventListener('click', () => {
     document.getElementById('section-later').classList.add('hidden')
     document.getElementById('section-done').classList.add('hidden')
     document.getElementById('section-today').classList.remove('hidden')
+    document.getElementById('view-title').textContent = "Today's tasks"
     tasks.filter(task => task.status == "Today").forEach(task => renderTask(task))
+    checkEmptySections()
 })
 
 filterDone.addEventListener('click', () => {
@@ -301,7 +312,9 @@ filterDone.addEventListener('click', () => {
     document.getElementById('section-today').classList.add('hidden')
     document.getElementById('section-later').classList.add('hidden')
     document.getElementById('section-done').classList.remove('hidden')
+    document.getElementById('view-title').textContent = "Done"
     tasks.filter(task => task.status == "Done").forEach(task => renderTask(task))
+    checkEmptySections()
 })
 
 
