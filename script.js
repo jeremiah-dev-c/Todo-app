@@ -137,6 +137,20 @@ const checkEmptySections = () => {
     } else {
     document.getElementById('empty-state-done').classList.add('hidden')
     }
+
+    if (activeFilter == 'filter-high' && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    document.getElementById('empty-state-high').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-high').classList.add('hidden')
+    }if (activeFilter == 'filter-medium' && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    document.getElementById('empty-state-medium').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-medium').classList.add('hidden')
+    }if (activeFilter == 'filter-low' && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    document.getElementById('empty-state-low').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-low').classList.add('hidden')
+    }
 }
 
 document.getElementById('task-list').addEventListener('click', (event) => {
