@@ -271,7 +271,7 @@ document.getElementById('label-list').addEventListener('click', (event) => {
     }
 })
 
-const filterAll = document.getElementById('filter-all')
+const filterAll = document.getElementById('filter-all');
 const filterToday = document.getElementById('filter-today');
 const filterDone = document.getElementById('filter-done');
 
@@ -317,7 +317,42 @@ filterDone.addEventListener('click', () => {
     checkEmptySections()
 })
 
+const filterHigh = document.getElementById('filter-high');
+const filterMedium = document.getElementById('filter-medium');
+const filterLow = document.getElementById('filter-low');
 
+filterHigh.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterHigh.classList.add('active')
+    document.getElementById('tasks-today').innerHTML = ""
+    document.getElementById('tasks-later').innerHTML = ""
+    document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('view-title').textContent = "High priority"
+    tasks.filter(task => task.priority == "High").forEach(task => renderTask(task))
+    checkEmptySections()
+})
+
+filterMedium.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterMedium.classList.add('active')
+    document.getElementById('tasks-today').innerHTML = ""
+    document.getElementById('tasks-later').innerHTML = ""
+    document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('view-title').textContent = "Medium priority"
+    tasks.filter(task => task.priority == "Medium").forEach(task => renderTask(task))
+    checkEmptySections()
+})
+
+filterLow.addEventListener('click', () => {
+    document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+    filterLow.classList.add('active')
+    document.getElementById('tasks-today').innerHTML = ""
+    document.getElementById('tasks-later').innerHTML = ""
+    document.getElementById('tasks-done').innerHTML = ""
+    document.getElementById('view-title').textContent = "Low priority"
+    tasks.filter(task => task.priority == "Low").forEach(task => renderTask(task))
+    checkEmptySections()
+})
 
 checkEmptySections()
 
