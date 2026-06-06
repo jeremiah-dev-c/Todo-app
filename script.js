@@ -262,7 +262,7 @@ saveLabel.addEventListener('click', () => {
     const renderLabels = (labels) => {
 
     document.getElementById('label-list').innerHTML += `
-    <div class="cat" id="filter-label" data-id="${labels.id}">
+    <div class="cat" id="filter-label" data-id="${labels.id}" data-name="${labels.name}">
         <span class="label-dot" style="background-color:${labels.color};"></span>
             ${labels.name}
         <span class="count" id="count-test"></span>
@@ -282,6 +282,17 @@ document.getElementById('label-list').addEventListener('click', (event) => {
     }
     if (labels.length < 5) {
         labelClick.classList.remove('hidden')
+    }
+
+    const clickedCat = event.target.closest('.cat')
+    if (clickedCat && !event.target.classList.contains('delete-label-icon')) {
+        document.querySelectorAll('.cat').forEach(cat => cat.classList.remove('active'))
+        clickedCat.classList.add('active')
+        document.getElementById('tasks-today').innerHTML = ""
+        document.getElementById('tasks-later').innerHTML = ""
+        document.getElementById('tasks-done').innerHTML = ""
+        tasks.filter(task => task.label == clickedCat.dataset.name).forEach(task => renderTask(task))
+        checkEmptySections()
     }
 })
 
