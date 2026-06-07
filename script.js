@@ -107,6 +107,9 @@ const checkEmptySections = () => {
     const sectionToday = document.getElementById('section-today')
     const sectionLater = document.getElementById('section-later')
     const sectionDone = document.getElementById('section-done')
+    const activeCat = document.querySelector('.cat.active')
+    const activeFilter = activeCat.id
+    const activeLabelName = activeCat.dataset.name
 
     if (todayLength == 0){
         sectionToday.classList.add('hidden')
@@ -121,8 +124,6 @@ const checkEmptySections = () => {
     }else {
         sectionDone.classList.remove('hidden')
     }
-
-    const activeFilter = document.querySelector('.cat.active').id
 
     if (activeFilter == 'filter-all' && todayLength == 0 && laterLength == 0 && doneLength == 0) {
     document.getElementById('empty-state-all').classList.remove('hidden')
@@ -150,6 +151,14 @@ const checkEmptySections = () => {
     document.getElementById('empty-state-low').classList.remove('hidden')
     } else {
     document.getElementById('empty-state-low').classList.add('hidden')
+    }if (activeLabelName && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    document.getElementById('empty-state-label').classList.remove('hidden')
+    } else {
+    document.getElementById('empty-state-label').classList.add('hidden')
+    }
+
+    if (activeLabelName && todayLength == 0 && laterLength == 0 && doneLength == 0) {
+    
     }
 }
 
@@ -291,6 +300,8 @@ document.getElementById('label-list').addEventListener('click', (event) => {
         document.getElementById('tasks-today').innerHTML = ""
         document.getElementById('tasks-later').innerHTML = ""
         document.getElementById('tasks-done').innerHTML = ""
+        document.getElementById('view-title').textContent = clickedCat.dataset.name + " tasks"
+        document.querySelector('#empty-state-label .empty-state-text').textContent = `No tasks with ${clickedCat.dataset.name} label`
         tasks.filter(task => task.label == clickedCat.dataset.name).forEach(task => renderTask(task))
         checkEmptySections()
     }
