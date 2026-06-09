@@ -45,15 +45,15 @@ const overlay = document.getElementById('overlay')
         ).join('')
     })
 
-const emptyTaskClick = document.getElementById('empty-add-btn');
 
-emptyTaskClick.addEventListener('click', () => {
-    taskPopup.classList.remove('hidden')
-    overlay.classList.remove('hidden')
-
-    document.getElementById('task-label').innerHTML = labels.map(label =>
+document.getElementById('main').addEventListener('click', (event) => {
+    if (event.target.classList.contains('empty-add-btn')) {
+        taskPopup.classList.remove('hidden')
+        overlay.classList.remove('hidden')
+        document.getElementById('task-label').innerHTML = labels.map(label =>
         `<option>${label.name}</option>`
         ).join('')
+    }
 })
 
 const taskNameInput = document.getElementById('task-name');
