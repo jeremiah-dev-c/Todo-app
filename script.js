@@ -33,8 +33,12 @@ tasks.forEach((task) => renderTask(task))
 
 const updateCounts = () => {
     document.getElementById('count-all').textContent = tasks.length
+    document.getElementById('count-today').textContent = tasks.filter(t => t.status == "Today").length
+    document.getElementById('count-done').textContent = tasks.filter(t => t.status == "Done").length
+    document.getElementById('count-high').textContent = tasks.filter(t => t.priority == "High").length
+    document.getElementById('count-medium').textContent = tasks.filter(t => t.priority == "Medium").length
+    document.getElementById('count-low').textContent = tasks.filter(t => t.priority == "low").length
 }
-
 updateCounts()
 
 
