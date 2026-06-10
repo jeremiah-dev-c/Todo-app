@@ -31,6 +31,12 @@ const renderTask = (task) => {
 
 tasks.forEach((task) => renderTask(task))
 
+const updateCounts = () => {
+    document.getElementById('count-all').textContent = tasks.length
+}
+
+updateCounts()
+
 
 const taskClick = document.getElementById('add-btn');
 const taskPopup = document.getElementById('newtask-popup');
@@ -98,6 +104,7 @@ addTask.addEventListener('click', () => {
     }
 
     taskNameInput.value = ""
+    updateCounts()
 })
 
 const checkEmptySections = () => {
@@ -180,6 +187,7 @@ document.getElementById('task-list').addEventListener('click', (event) => {
             checkEmptySections()
         }
     }
+    updateCounts()
 })
 
 const labelClick = document.getElementById('add-label');
